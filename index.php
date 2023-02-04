@@ -1,17 +1,74 @@
 <?php
 
+
 declare(strict_types=1);
 
-class Oib
-{
 
-    public function __construct(int $brojoiba2)
+include_once 'Generator.php';
+
+function komoib() //broj zeljenih oiba
     {
+
+       
+        for(;;)
+        { //validator dali je unesni broj oiba pozitivni integer
+            
+            $komoib = readline('Unesi kolicinu potrebnih OIB-a: ');
+            
+            if ($komoib == intval($komoib) && $komoib > 0) // == netrebaju biti isti tip usporedujem vrijednost
+                { 
+                 break;
+                }
+        }
         
+        return $komoib;
+
+    }
+
+    $brojoiba1 = intval(komoib()); // pretvori u int
+
+
+
+    $oib = new Oib($brojoiba1); // proslijedi construcotru vrijednost varijable brojoiba1
+
+
+/*
+ SAMO POMOCU FUNKCIJA BEZ KLASA
+$oib = new Oib();
+
+
+    function komoib() //broj zeljenih oiba
+    {
+
+       
+        for(;;)
+        { //validator dali je unesni broj oiba pozitivni integer
+            
+            $komoib = readline('Unesi kolicinu potrebnih OIB-a : ');
+            
+            if ($komoib == intval($komoib) && $komoib > 0) // == netrebaju biti isti tip usporedujem vrijednost
+                { 
+                 break;
+                }
+        }
+        
+        return $komoib;
+
+    }
+
+
+
+
+    $brojoiba1 = null;
+    $brojoiba1 = komoib();
+
+   
+
+    function generator($brojoiba2) //generiranje valjanog OIB-a
+    {
         $x=0;//brojac
 
-        while($x < $brojoiba2)
-        {
+        while($x < $brojoiba2){
 
             for($i=0; $i < 10; $i++){
                 $rand[] = random_int(0 , 9); //random niz od 10 brojeva na kraju mu dodajemo kontrolnu znamenku
@@ -61,8 +118,11 @@ class Oib
             $rand = []; // isprazni array
             $x++;//brojac
 
+
+
         }
-    }   
-}
 
+    }
 
+    generator($brojoiba1);
+*/
