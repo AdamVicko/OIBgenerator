@@ -1,39 +1,33 @@
 <?php
 
 
+//camelCase
+
 declare(strict_types=1);
-
-
 include_once 'Generator.php';
 
-function komoib() //broj zeljenih oiba
+function komOib() //broj zeljenih oiba
     {
-
-       
         for(;;)
         { //validator dali je unesni broj oiba pozitivni integer
-            
-            $komoib = readline('Unesi kolicinu potrebnih OIB-a: ');
-            
-            if ($komoib == intval($komoib) && $komoib > 0) // == netrebaju biti isti tip usporedujem vrijednost
+            $komOib = readline('Unesi kolicinu potrebnih OIB-a: ');
+            if ($komOib == intval($komOib) && $komOib > 0) // == netrebaju biti isti tip usporedujem vrijednost
                 { 
                  break;
                 }
         }
-        
-        return $komoib;
-
+        return $komOib;
     }
+    $kolicinaOiba = intval(komOib()); // pretvori u int
+    $oib = new Oib($kolicinaOiba); // proslijedi construcotru vrijednost varijable brojoiba1
+                                //losa praksa nazivati varijable isto i dodavati redni broj iza
 
-    $brojoiba1 = intval(komoib()); // pretvori u int
 
-
-
-    $oib = new Oib($brojoiba1); // proslijedi construcotru vrijednost varijable brojoiba1
 
 
 /*
  SAMO POMOCU FUNKCIJA BEZ KLASA
+
 $oib = new Oib();
 
 
