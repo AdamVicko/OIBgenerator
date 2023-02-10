@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 class Oib
 {
-    public function __construct(int $brojOiba2)
+    public function __construct(int $brojOiba)
     {
         $x=0;//brojac
-        while($x < $brojOiba2)
+        while($x < $brojOiba)
         {
             $rand = []; // isprazni array
             for($i=0; $i < 10; $i++)
